@@ -5,11 +5,19 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${env:HOME}/edk2/MdePkg/Include",
-                "${env:HOME}/edk2/MdePkg/Include/X64"
+                "${env:HOME}/edk2/MdePkg/Include/X64",
+                "${env:HOME}/osbook/devenv/x86_64-elf/include/c++/v1",
+                "${env:HOME}/osbook/devenv/x86_64-elf/include",
+                "${env:HOME}/osbook/devenv/x86_64-elf/include/freetype2"
             ],
-            "defines": [],
+            "defines": [
+                "__ELF__",
+                "_LDBL_EQ_DBL",
+                "_GNU_SOURCE",
+                "_POSIX_TIMERS"
+            ],
             "macFrameworkPath": [],
-            "compilerPath": "/opt/llvm9/bin/clang",
+            "compilerPath": "/opt/llvm9/bin/clang++",
             "cStandard": "c17",
             "cppStandard": "c++14",
             "intelliSenseMode": "macos-clang-x64"
