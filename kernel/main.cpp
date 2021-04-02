@@ -18,6 +18,23 @@ extern "C" void __cxa_pure_virtual() {
   while (1) __asm__("hlt");
 }
 
+char console_buf[sizeof(Console)];
+Console* console;
+
+int printk(const char* format, ...) {
+  va_list ap;
+  int result;
+  char s[1024];
+
+  va_start(ap, format);
+  result = vsnprintf(s, sizeof(s), format, ap);
+  va_end(ap);
+
+  console->PutString(s);
+
+  return result;
+}
+
 extern "C" void KernelMain(const FrameBufferConfig& frame_buffer_config) {
   switch (frame_buffer_config.pixel_format) {
     case kPixelRGBResv8BitPerColor:
@@ -36,12 +53,11 @@ extern "C" void KernelMain(const FrameBufferConfig& frame_buffer_config) {
     }
   }
 
-  Console console{*pixel_writer, {0, 0, 0}, {255, 255, 255}};
+  console =
+      new (console_buf) Console{*pixel_writer, {0, 0, 0}, {255, 255, 255}};
 
-  char buf[128];
   for (int i = 0; i < 27; ++i) {
-    sprintf(buf, "line %d\n", i);
-    console.PutString(buf);
+    printk("printk: %d\n", i);
   }
   while (1) __asm__("hlt");
 }
