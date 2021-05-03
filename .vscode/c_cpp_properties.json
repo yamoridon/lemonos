@@ -8,7 +8,8 @@
                 "${env:HOME}/edk2/MdePkg/Include/X64",
                 "${env:HOME}/osbook/devenv/x86_64-elf/include/c++/v1",
                 "${env:HOME}/osbook/devenv/x86_64-elf/include",
-                "${env:HOME}/osbook/devenv/x86_64-elf/include/freetype2"
+                "${env:HOME}/osbook/devenv/x86_64-elf/include/freetype2",
+                "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
             ],
             "defines": [
                 "__ELF__",
@@ -20,7 +21,7 @@
             "compilerPath": "/opt/llvm9/bin/clang++",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "macos-clang-x64"
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4
