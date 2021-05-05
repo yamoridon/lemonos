@@ -39,7 +39,7 @@ const std::array<const char*, 37> kTRBCompletionCodeToName{
     "Undefined Error",
     "Invalid Stream ID Error",
     "Secondary Bandwidth Error",
-    "Split Transaction Error"
+    "Split Transaction Error",
     // clang-format on
 };
 
@@ -108,7 +108,7 @@ const std::array<const char*, 64> kTRBTypeToName{
     "Vendor Defined",
     "Vendor Defined",
     "Vendor Defined",
-    "Vendor Defined"
+    "Vendor Defined",
     // clang-format on
 };
 }  // namespace usb::xhci

@@ -1,3 +1,9 @@
+/**
+ * @file font.cpp
+ *
+ * フォント描画のプログラムを集めたファイル。
+ */
+
 #include "font.hpp"
 
 extern const uint8_t _binary_hankaku_bin_start;
@@ -20,7 +26,7 @@ void WriteAscii(PixelWriter& writer, int x, int y, char c,
   }
   for (int dy = 0; dy < 16; ++dy) {
     for (int dx = 0; dx < 8; ++dx) {
-      if ((font[dy] << dx) & 0x80) {
+      if ((font[dy] << dx) & 0x80u) {
         writer.Write(x + dx, y + dy, color);
       }
     }

@@ -4,7 +4,9 @@
 #include "usb/xhci/xhci.hpp"
 
 namespace usb::xhci {
-uint8_t Port::Number() const { return port_num_; }
+uint8_t Port::Number() const {
+  return port_num_;
+}
 
 bool Port::IsConnected() const {
   return port_reg_set_.PORTSC.Read().bits.current_connect_status;
@@ -22,7 +24,9 @@ bool Port::IsPortResetChanged() const {
   return port_reg_set_.PORTSC.Read().bits.port_reset_change;
 }
 
-int Port::Speed() const { return port_reg_set_.PORTSC.Read().bits.port_speed; }
+int Port::Speed() const {
+  return port_reg_set_.PORTSC.Read().bits.port_speed;
+}
 
 Error Port::Reset() {
   auto portsc = port_reg_set_.PORTSC.Read();
@@ -34,5 +38,7 @@ Error Port::Reset() {
   return MAKE_ERROR(Error::kSuccess);
 }
 
-Device* Port::Initialize() { return nullptr; }
+Device* Port::Initialize() {
+  return nullptr;
+}
 }  // namespace usb::xhci

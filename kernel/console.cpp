@@ -1,3 +1,9 @@
+/**
+ * @file console.cpp
+ *
+ * コンソール描画のプログラムを集めたファイル。
+ */
+
 #include "console.hpp"
 
 #include <cstring>
@@ -16,8 +22,8 @@ Console::Console(PixelWriter& writer, const PixelColor& fg_color,
 void Console::PutString(const char* s) {
   while (*s) {
     if (*s == '\n') {
-      NewLine();
-    } else if (cursor_column_ < kColumns - -1) {
+      Newline();
+    } else if (cursor_column_ < kColumns - 1) {
       WriteAscii(writer_, 8 * cursor_column_, 16 * cursor_row_, *s, fg_color_);
       buffer_[cursor_row_][cursor_column_] = *s;
       ++cursor_column_;
@@ -26,7 +32,7 @@ void Console::PutString(const char* s) {
   }
 }
 
-void Console::NewLine() {
+void Console::Newline() {
   cursor_column_ = 0;
   if (cursor_row_ < kRows - 1) {
     ++cursor_row_;

@@ -10,8 +10,8 @@
 #include <Protocol/SimpleFileSystem.h>
 #include <Uefi.h>
 
-#include "elf.h"
-#include "frame_buffer_config.h"
+#include "elf.hpp"
+#include "frame_buffer_config.hpp"
 
 struct MemoryMap {
   UINTN buffer_size;

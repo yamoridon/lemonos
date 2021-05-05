@@ -11,7 +11,7 @@ class Console {
   void PutString(const char* s);
 
  private:
-  void NewLine();
+  void Newline();
 
   PixelWriter& writer_;
   const PixelColor fg_color_, bg_color_;

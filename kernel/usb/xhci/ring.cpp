@@ -29,7 +29,7 @@ Error Ring::Initialize(size_t buf_size) {
 
 void Ring::CopyToLast(const std::array<uint32_t, 4>& data) {
   for (int i = 0; i < 3; ++i) {
-    // data[0..2] must be written piror to data[3].
+    // data[0..2] must be written prior to data[3].
     buf_[write_index_].data[i] = data[i];
   }
   buf_[write_index_].data[3] =

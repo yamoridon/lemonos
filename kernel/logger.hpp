@@ -6,7 +6,13 @@
 
 #pragma once
 
-enum LogLevel { kError = 3, kWarn = 4, kInfo = 6, kDebug = 7 };
+enum LogLevel
+{
+  kError = 3,
+  kWarn = 4,
+  kInfo = 6,
+  kDebug = 7,
+};
 
 /** @brief グローバルなログ優先度の閾値を変更する。
  *

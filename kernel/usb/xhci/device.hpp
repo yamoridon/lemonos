@@ -19,7 +19,13 @@
 namespace usb::xhci {
 class Device : public usb::Device {
  public:
-  enum class State { kInvalid, kBlank, kSlotAssigning, kSlotAssigned };
+  enum class State
+  {
+    kInvalid,
+    kBlank,
+    kSlotAssigning,
+    kSlotAssigned
+  };
 
   using OnTransferredCallbackType = void(Device* dev, DeviceContextIndex dci,
                                          int completion_code,

@@ -22,7 +22,9 @@ void* HIDMouseDriver::operator new(size_t size) {
   return AllocMem(sizeof(HIDMouseDriver), 0, 0);
 }
 
-void HIDMouseDriver::operator delete(void* ptr) noexcept { FreeMem(ptr); }
+void HIDMouseDriver::operator delete(void* ptr) noexcept {
+  FreeMem(ptr);
+}
 
 void HIDMouseDriver::SubscribeMouseMove(
     std::function<void(int8_t displacement_x, int8_t displacement_y)>

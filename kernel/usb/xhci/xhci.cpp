@@ -19,7 +19,8 @@ Error RegisterCommandRing(Ring* ring, MemMapRegister<CRCR_Bitmap>* crcr) {
   return MAKE_ERROR(Error::kSuccess);
 }
 
-enum class ConfigPhase {
+enum class ConfigPhase
+{
   kNotConnected,
   kWaitingAddressed,
   kResettingPort,

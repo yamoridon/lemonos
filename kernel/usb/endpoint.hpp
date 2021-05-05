@@ -9,7 +9,8 @@
 #include "error.hpp"
 
 namespace usb {
-enum class EndpointType {
+enum class EndpointType
+{
   kControl = 0,
   kIsochronous = 1,
   kBulk = 2,

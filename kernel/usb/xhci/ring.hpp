@@ -28,7 +28,7 @@ class Ring {
 
   /** @brief TRB に cycle bit を設定した上でリング末尾に追加する。
    *
-   * @return 追加された（リング上の）TRB を指すポインタ
+   * @return 追加された（リング上の）TRB を指すポインタ。
    */
   template <typename TRBType>
   TRB* Push(const TRBType& trb) {
@@ -54,11 +54,11 @@ class Ring {
 
   /** @brief TRB に cycle bit を設定した上でリング末尾に追加する。
    *
-   * write_index_ をインクリメントする。その結果 write_index_ が
-   * リング末尾に達したら LinkTRB を適切に配置して write_index_ を 0 に戻し、
-   * cycle bit を反転する
+   * write_index_ をインクリメントする。その結果 write_index_ がリング末
+   * に達したら LinkTRB を適切に配置して write_index_ を 0 に戻し、
+   * cycle bit を反転させる。
    *
-   * @return 追加された（リング上の）TRB を指すポインタ
+   * @return 追加された（リング上の）TRB を指すポインタ。
    */
   TRB* Push(const std::array<uint32_t, 4>& data);
 };

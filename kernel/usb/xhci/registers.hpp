@@ -36,7 +36,7 @@ union HCSPARAMS3_Bitmap {
   struct {
     uint32_t u1_device_exit_latency : 8;
     uint32_t : 8;
-    uint32_t u2_device_exit_latency : 8;
+    uint32_t u2_device_exit_latency : 16;
   } __attribute__((packed)) bits;
 } __attribute__((packed));
 
@@ -378,7 +378,7 @@ class ExtendedRegisterList {
   class Iterator {
    public:
     Iterator(ValueType* reg) : reg_{reg} {}
-    auto operator-> () const { return reg_; }
+    auto operator->() const { return reg_; }
     auto& operator*() const { return *reg_; }
     bool operator==(Iterator lhs) const { return reg_ == lhs.reg_; }
     bool operator!=(Iterator lhs) const { return reg_ != lhs.reg_; }

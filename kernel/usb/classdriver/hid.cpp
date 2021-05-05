@@ -12,7 +12,9 @@ HIDBaseDriver::HIDBaseDriver(Device* dev, int interface_index,
       interface_index_{interface_index},
       in_packet_size_{in_packet_size} {}
 
-Error HIDBaseDriver::Initialize() { return MAKE_ERROR(Error::kNotImplemented); }
+Error HIDBaseDriver::Initialize() {
+  return MAKE_ERROR(Error::kNotImplemented);
+}
 
 Error HIDBaseDriver::SetEndpoint(const EndpointConfig& config) {
   if (config.ep_type == EndpointType::kInterrupt && config.ep_id.IsIn()) {

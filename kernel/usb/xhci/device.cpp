@@ -82,7 +82,9 @@ Error Device::Initialize() {
   return MAKE_ERROR(Error::kSuccess);
 }
 
-void Device::SelectForSlotAssignment() { state_ = State::kSlotAssigning; }
+void Device::SelectForSlotAssignment() {
+  state_ = State::kSlotAssigning;
+}
 
 Ring* Device::AllocTransferRing(DeviceContextIndex index, size_t buf_size) {
   int i = index.value - 1;

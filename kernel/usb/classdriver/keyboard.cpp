@@ -28,7 +28,9 @@ void* HIDKeyboardDriver::operator new(size_t size) {
   return AllocMem(sizeof(HIDKeyboardDriver), 0, 0);
 }
 
-void HIDKeyboardDriver::operator delete(void* ptr) noexcept { FreeMem(ptr); }
+void HIDKeyboardDriver::operator delete(void* ptr) noexcept {
+  FreeMem(ptr);
+}
 
 void HIDKeyboardDriver::SubscribeKeyPush(
     std::function<void(uint8_t keycode)> observer) {
