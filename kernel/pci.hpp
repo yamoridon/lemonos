@@ -106,7 +106,7 @@ union CapabilityHeader {
 } __attribute__((packed));
 
 const uint8_t kCapabilityMSI = 0x05;
-const uint8_t kCapabiliryMSIX = 0x11;
+const uint8_t kCapabilityMSIX = 0x11;
 
 /** @brief 指定された PCI デバイスの指定されたケーパビリティレジスタを読み込む
  *
@@ -147,7 +147,7 @@ struct MSICapability {
  * @param dev  設定対象の PCI デバイス
  * @param msg_addr  割り込み発生時にメッセージを書き込む先のアドレス
  * @param msg_data  割り込み発生時に書き込むメッセージの値
- * @param num_vector_exponent  割り当てるベクタの数 (2^n の n を指定)
+ * @param num_vector_exponent  割り当てるベクタ数 (2^n の n を指定)
  */
 Error ConfigureMSI(const Device& dev, uint32_t msg_addr, uint32_t msg_data,
                    unsigned int num_vector_exponent);

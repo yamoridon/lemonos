@@ -288,7 +288,7 @@ Error ConfigureMSI(const Device& dev, uint32_t msg_addr, uint32_t msg_data,
     auto header = ReadCapabilityHeader(dev, cap_addr);
     if (header.bits.cap_id == kCapabilityMSI) {
       msi_cap_addr = cap_addr;
-    } else if (header.bits.cap_id == kCapabiliryMSIX) {
+    } else if (header.bits.cap_id == kCapabilityMSIX) {
       msix_cap_addr = cap_addr;
     }
     cap_addr = header.bits.next_ptr;
