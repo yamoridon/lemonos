@@ -165,7 +165,7 @@ enum class MSIDeliveryMode
   kSMI = 0b010,
   kNMI = 0b100,
   kINIT = 0b101,
-  kExtInt = 0b11,
+  kExtINT = 0b111,
 };
 
 Error ConfigureMSIFixedDestination(const Device& dev, uint8_t apic_id,
